@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Source_Serif_4 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({
@@ -29,12 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script src="/sw.js" />
-      </head>
       <body
         className={`${playfairDisplay.variable} ${sourceSerif4.variable} antialiased`}
       >
+        <Script src="/sw.js" strategy="afterInteractive" />
         {children}
       </body>
     </html>
