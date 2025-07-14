@@ -18,9 +18,13 @@ self.addEventListener("activate", function (event) {
 });
 
 // Also unregister any existing service workers
-if (navigator && navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+if (
+  navigator &&
+  navigator.serviceWorker &&
+  navigator.serviceWorker.getRegistrations
+) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for(let registration of registrations) {
+    for (let registration of registrations) {
       registration.unregister();
     }
   });
