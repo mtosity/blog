@@ -145,7 +145,11 @@ export default function BlogLayout({ title, date, children }: BlogLayoutProps) {
 
   useEffect(() => {
     const extractHeadings = () => {
-      const headingElements = document.querySelectorAll(
+      // Only extract headings from the article content, not the entire page
+      const articleElement = document.querySelector("article.prose");
+      if (!articleElement) return;
+
+      const headingElements = articleElement.querySelectorAll(
         "h1, h2, h3, h4, h5, h6"
       );
       const headingData: Heading[] = [];

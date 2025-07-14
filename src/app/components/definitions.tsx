@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface Definition {
   title: string;
@@ -31,24 +31,28 @@ export const definitions: Record<string, Definition> = {
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>useEffect</strong> is a React Hook that lets you perform side effects in functional components.
+          <strong>useEffect</strong> is a React Hook that lets you perform side
+          effects in functional components.
         </p>
-        
+
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
           <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
-          <code className="text-xs">
-            useEffect(setup, dependencies?)
-          </code>
+          <code className="text-xs">useEffect(setup, dependencies?)</code>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Parameters:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
-            <li><strong>setup</strong>: Function with your Effect&apos;s logic</li>
-            <li><strong>dependencies</strong>: Optional array of values that trigger the effect</li>
+            <li>
+              <strong>setup</strong>: Function with your Effect&apos;s logic
+            </li>
+            <li>
+              <strong>dependencies</strong>: Optional array of values that
+              trigger the effect
+            </li>
           </ul>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Common Use Cases:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
@@ -58,65 +62,77 @@ export const definitions: Record<string, Definition> = {
             <li>• Cleanup (timers, subscriptions)</li>
           </ul>
         </div>
-        
+
         <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-yellow-800 dark:text-yellow-200">⚠️ Important:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-yellow-800 dark:text-yellow-200">
+            ⚠️ Important:
+          </h4>
           <p className="text-xs text-yellow-700 dark:text-yellow-300">
-            Always include all dependencies that are used inside the effect to avoid stale closures.
+            Always include all dependencies that are used inside the effect to
+            avoid stale closures.
           </p>
         </div>
       </div>
-    )
+    ),
   },
-  
+
   useState: {
     title: "useState Hook",
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>useState</strong> is a React Hook that lets you add state to functional components.
+          <strong>useState</strong> is a React Hook that lets you add state to
+          functional components.
         </p>
-        
+
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
           <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
           <code className="text-xs">
             const [state, setState] = useState(initialState)
           </code>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Returns:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
-            <li><strong>state</strong>: Current state value</li>
-            <li><strong>setState</strong>: Function to update the state</li>
+            <li>
+              <strong>state</strong>: Current state value
+            </li>
+            <li>
+              <strong>setState</strong>: Function to update the state
+            </li>
           </ul>
         </div>
-        
+
         <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-blue-800 dark:text-blue-200">💡 Best Practice:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-blue-800 dark:text-blue-200">
+            💡 Best Practice:
+          </h4>
           <p className="text-xs text-blue-700 dark:text-blue-300">
-            Use functional updates when the new state depends on the previous state.
+            Use functional updates when the new state depends on the previous
+            state.
           </p>
         </div>
       </div>
-    )
+    ),
   },
-  
+
   useMemo: {
     title: "useMemo Hook",
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>useMemo</strong> is a React Hook that lets you cache expensive calculations between re-renders.
+          <strong>useMemo</strong> is a React Hook that lets you cache expensive
+          calculations between re-renders.
         </p>
-        
+
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
           <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
           <code className="text-xs">
             const memoizedValue = useMemo(() =&gt; computation, [dependencies])
           </code>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">When to Use:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
@@ -125,32 +141,35 @@ export const definitions: Record<string, Definition> = {
             <li>• Optimizing child component props</li>
           </ul>
         </div>
-        
+
         <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-orange-800 dark:text-orange-200">⚡ Performance:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-orange-800 dark:text-orange-200">
+            ⚡ Performance:
+          </h4>
           <p className="text-xs text-orange-700 dark:text-orange-300">
             Only use when you have a proven performance problem. Profile first!
           </p>
         </div>
       </div>
-    )
+    ),
   },
-  
+
   useCallback: {
     title: "useCallback Hook",
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>useCallback</strong> is a React Hook that lets you cache a function definition between re-renders.
+          <strong>useCallback</strong> is a React Hook that lets you cache a
+          function definition between re-renders.
         </p>
-        
+
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
           <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
           <code className="text-xs">
             const memoizedCallback = useCallback(fn, [dependencies])
           </code>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Common Use Cases:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
@@ -159,25 +178,28 @@ export const definitions: Record<string, Definition> = {
             <li>• Dependency of other hooks</li>
           </ul>
         </div>
-        
+
         <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">✅ Tip:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+            ✅ Tip:
+          </h4>
           <p className="text-xs text-green-700 dark:text-green-300">
             Use with React.memo() for maximum optimization benefit.
           </p>
         </div>
       </div>
-    )
+    ),
   },
-  
+
   keys: {
     title: "React Keys",
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>Keys</strong> help React identify which items have changed, are added, or are removed in lists.
+          <strong>Keys</strong> help React identify which items have changed,
+          are added, or are removed in lists.
         </p>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Requirements:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
@@ -186,34 +208,40 @@ export const definitions: Record<string, Definition> = {
             <li>• Should not be array indices (in most cases)</li>
           </ul>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Good Key Examples:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
-            <li>• Database IDs: <code>user.id</code></li>
+            <li>
+              • Database IDs: <code>user.id</code>
+            </li>
             <li>• UUIDs or unique identifiers</li>
             <li>• Stable content hashes</li>
           </ul>
         </div>
-        
+
         <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-red-800 dark:text-red-200">❌ Avoid:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-red-800 dark:text-red-200">
+            ❌ Avoid:
+          </h4>
           <p className="text-xs text-red-700 dark:text-red-300">
-            Using array indices as keys when list items can be reordered, added, or removed.
+            Using array indices as keys when list items can be reordered, added,
+            or removed.
           </p>
         </div>
       </div>
-    )
+    ),
   },
-  
+
   immutability: {
     title: "State Immutability",
     content: (
       <div className="space-y-4">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          <strong>Immutability</strong> means not changing existing objects/arrays, but creating new ones instead.
+          <strong>Immutability</strong> means not changing existing
+          objects/arrays, but creating new ones instead.
         </p>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Why It Matters:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
@@ -223,32 +251,228 @@ export const definitions: Record<string, Definition> = {
             <li>• Makes state updates predictable</li>
           </ul>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-sm mb-2">Safe Update Patterns:</h4>
           <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
-            <li>• Arrays: <code>[...items, newItem]</code></li>
-            <li>• Objects: <code>{`{...obj, prop: newValue}`}</code></li>
-            <li>• Filtering: <code>items.filter(item =&gt; ...)</code></li>
-            <li>• Mapping: <code>items.map(item =&gt; ...)</code></li>
+            <li>
+              • Arrays: <code>[...items, newItem]</code>
+            </li>
+            <li>
+              • Objects: <code>{`{...obj, prop: newValue}`}</code>
+            </li>
+            <li>
+              • Filtering: <code>items.filter(item =&gt; ...)</code>
+            </li>
+            <li>
+              • Mapping: <code>items.map(item =&gt; ...)</code>
+            </li>
           </ul>
         </div>
-        
+
         <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-purple-800 dark:text-purple-200">🔧 Tools:</h4>
+          <h4 className="font-semibold text-sm mb-1 text-purple-800 dark:text-purple-200">
+            🔧 Tools:
+          </h4>
           <p className="text-xs text-purple-700 dark:text-purple-300">
             Consider using Immer for complex state updates.
           </p>
         </div>
       </div>
-    )
-  }
+    ),
+  },
+
+  hedonicAdaptation: {
+    title: "Hedonic Adaptation",
+    content: (
+      <div className="space-y-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          <strong>Hedonic Adaptation</strong> is the tendency for humans to
+          quickly return to a baseline level of happiness despite positive or
+          negative events.
+        </p>
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-blue-800 dark:text-blue-200">
+            How it works:
+          </h4>
+          <ul className="text-xs space-y-1 text-blue-700 dark:text-blue-300">
+            <li>• Initial boost in happiness from positive changes</li>
+            <li>• Gradual return to baseline happiness level</li>
+            <li>• New circumstances become "normal"</li>
+          </ul>
+        </div>
+
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-1 text-yellow-800 dark:text-yellow-200">
+            Examples:
+          </h4>
+          <p className="text-xs text-yellow-700 dark:text-yellow-300">
+            Winning the lottery, getting a promotion, or buying a new car
+            initially brings joy, but happiness levels typically return to
+            baseline within months.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  affectiveForecasting: {
+    title: "Affective Forecasting",
+    content: (
+      <div className="space-y-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          <strong>Affective Forecasting</strong> is our ability to predict how
+          future events will make us feel. Humans are notoriously bad at this.
+        </p>
+
+        <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-red-800 dark:text-red-200">
+            Common Mistakes:
+          </h4>
+          <ul className="text-xs space-y-1 text-red-700 dark:text-red-300">
+            <li>
+              • <strong>Impact bias:</strong> Overestimating intensity of future
+              emotions
+            </li>
+            <li>
+              • <strong>Durability bias:</strong> Overestimating how long
+              emotions will last
+            </li>
+            <li>
+              • <strong>Focusing illusion:</strong> Overweighting one factor
+              while ignoring others
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+            Why it matters:
+          </h4>
+          <p className="text-xs text-green-700 dark:text-green-300">
+            Understanding this bias helps us make better decisions and have more
+            realistic expectations about future happiness.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  socialComparison: {
+    title: "Social Comparison Theory",
+    content: (
+      <div className="space-y-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          <strong>Social Comparison Theory</strong> explains how we evaluate
+          ourselves relative to others to assess our own worth and abilities.
+        </p>
+
+        <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-purple-800 dark:text-purple-200">
+            Types of Comparison:
+          </h4>
+          <ul className="text-xs space-y-1 text-purple-700 dark:text-purple-300">
+            <li>
+              • <strong>Upward:</strong> Comparing to those "better off"
+            </li>
+            <li>
+              • <strong>Downward:</strong> Comparing to those "worse off"
+            </li>
+            <li>
+              • <strong>Lateral:</strong> Comparing to similar others
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-1 text-orange-800 dark:text-orange-200">
+            Impact on happiness:
+          </h4>
+          <p className="text-xs text-orange-700 dark:text-orange-300">
+            Frequent upward comparisons can decrease life satisfaction, while
+            focusing on personal progress tends to increase well-being.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  mindfulness: {
+    title: "Mindfulness",
+    content: (
+      <div className="space-y-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          <strong>Mindfulness</strong> is the practice of purposeful,
+          non-judgmental awareness of the present moment.
+        </p>
+
+        <div className="bg-teal-50 dark:bg-teal-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-teal-800 dark:text-teal-200">
+            Core Elements:
+          </h4>
+          <ul className="text-xs space-y-1 text-teal-700 dark:text-teal-300">
+            <li>• Present-moment awareness</li>
+            <li>• Non-judgmental observation</li>
+            <li>• Acceptance of current experience</li>
+            <li>• Letting go of mental autopilot</li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+            Benefits for happiness:
+          </h4>
+          <p className="text-xs text-green-700 dark:text-green-300">
+            Regular mindfulness practice can increase life satisfaction, reduce
+            stress, and help you savor positive experiences more fully.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  gratitudePractice: {
+    title: "Gratitude Practice",
+    content: (
+      <div className="space-y-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          <strong>Gratitude Practice</strong> involves regularly acknowledging
+          and appreciating positive aspects of life, both big and small.
+        </p>
+
+        <div className="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-2 text-pink-800 dark:text-pink-200">
+            Effective Methods:
+          </h4>
+          <ul className="text-xs space-y-1 text-pink-700 dark:text-pink-300">
+            <li>• Three good things exercise (daily)</li>
+            <li>• Gratitude journaling</li>
+            <li>• Gratitude letters to others</li>
+            <li>• Mindful appreciation moments</li>
+          </ul>
+        </div>
+
+        <div className="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-sm mb-1 text-indigo-800 dark:text-indigo-200">
+            Research findings:
+          </h4>
+          <p className="text-xs text-indigo-700 dark:text-indigo-300">
+            Studies show gratitude practice can increase happiness by 25%,
+            improve sleep quality, strengthen relationships, and boost immune
+            function.
+          </p>
+        </div>
+      </div>
+    ),
+  },
 };
 
 export const codeExamples: Record<string, CodeExample> = {
   stateReference: {
     title: "setState the Same Array/Object References",
-    description: "Mutating state directly instead of creating new references prevents React from detecting changes.",
+    description:
+      "Mutating state directly instead of creating new references prevents React from detecting changes.",
     wrongCode: {
       code: `import { useState } from "react";
 
@@ -274,7 +498,8 @@ function App() {
   );
 }`,
       language: "jsx",
-      explanation: "React will not detect the change since the array reference is the same, even though the content changed."
+      explanation:
+        "React will not detect the change since the array reference is the same, even though the content changed.",
     },
     correctCode: {
       code: `import { useState } from "react";
@@ -298,13 +523,15 @@ function App() {
   );
 }`,
       language: "jsx",
-      explanation: "Creating a new array with the spread operator allows React to detect the change and re-render."
-    }
+      explanation:
+        "Creating a new array with the spread operator allows React to detect the change and re-render.",
+    },
   },
 
   unnecessaryUseEffect: {
     title: "Using useEffect for Unnecessary Tracking",
-    description: "Many developers overuse useEffect for computations that could be done directly during rendering.",
+    description:
+      "Many developers overuse useEffect for computations that could be done directly during rendering.",
     wrongCode: {
       code: `import React, { useEffect, useState } from "react";
 
@@ -327,7 +554,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "Using useEffect for simple calculations adds unnecessary complexity and potential bugs."
+      explanation:
+        "Using useEffect for simple calculations adds unnecessary complexity and potential bugs.",
     },
     correctCode: {
       code: `import React from "react";
@@ -345,13 +573,15 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "Calculate the value directly during render - simpler, more predictable, and less error-prone."
-    }
+      explanation:
+        "Calculate the value directly during render - simpler, more predictable, and less error-prone.",
+    },
   },
 
   noCleanup: {
     title: "Not Using Cleanup Functions in useEffect",
-    description: "Failing to clean up asynchronous operations can lead to race conditions and memory leaks.",
+    description:
+      "Failing to clean up asynchronous operations can lead to race conditions and memory leaks.",
     wrongCode: {
       code: `export const Example3 = () => {
   const [data, setData] = React.useState("");
@@ -381,7 +611,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "Without cleanup, rapid changes could cause race conditions where old requests complete after new ones."
+      explanation:
+        "Without cleanup, rapid changes could cause race conditions where old requests complete after new ones.",
     },
     correctCode: {
       code: `export const Example3 = () => {
@@ -417,13 +648,15 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "The cleanup function cancels ongoing requests, preventing race conditions and memory leaks."
-    }
+      explanation:
+        "The cleanup function cancels ongoing requests, preventing race conditions and memory leaks.",
+    },
   },
 
   tooManyUseStates: {
     title: "Using Too Many useStates for a Form",
-    description: "Managing form state with multiple useState hooks can lead to verbose code and unnecessary re-renders.",
+    description:
+      "Managing form state with multiple useState hooks can lead to verbose code and unnecessary re-renders.",
     wrongCode: {
       code: `export const Example4 = () => {
   const [name, setName] = React.useState("");
@@ -471,7 +704,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "Multiple useState calls create unnecessary complexity and can cause performance issues with many form fields."
+      explanation:
+        "Multiple useState calls create unnecessary complexity and can cause performance issues with many form fields.",
     },
     correctCode: {
       code: `export const Example4 = () => {
@@ -505,13 +739,15 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "Using useRef with FormData simplifies form handling and eliminates unnecessary re-renders."
-    }
+      explanation:
+        "Using useRef with FormData simplifies form handling and eliminates unnecessary re-renders.",
+    },
   },
 
   useEffectVsLayoutEffect: {
     title: "Not Using useLayoutEffect for Layout Shifting",
-    description: "useLayoutEffect runs synchronously before browser paint, preventing layout shifts.",
+    description:
+      "useLayoutEffect runs synchronously before browser paint, preventing layout shifts.",
     wrongCode: {
       code: `export const Example5 = () => {
   const [marginTop, setMarginTop] = useState(0);
@@ -542,7 +778,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "useEffect runs after paint, causing visible layout shift as the element jumps from position 0 to 100."
+      explanation:
+        "useEffect runs after paint, causing visible layout shift as the element jumps from position 0 to 100.",
     },
     correctCode: {
       code: `export const Example5 = () => {
@@ -574,13 +811,15 @@ const UserAgeCalculator = ({ userInfo }) => {
   );
 };`,
       language: "jsx",
-      explanation: "useLayoutEffect runs before paint, preventing visible layout shift and providing smooth rendering."
-    }
+      explanation:
+        "useLayoutEffect runs before paint, preventing visible layout shift and providing smooth rendering.",
+    },
   },
 
   unnecessaryDependencies: {
     title: "Unnecessary useEffect Function Dependencies",
-    description: "Including functions in useEffect dependencies that recreate on every render causes unnecessary re-runs.",
+    description:
+      "Including functions in useEffect dependencies that recreate on every render causes unnecessary re-runs.",
     wrongCode: {
       code: `function ChatRoom() {
   const [message, setMessage] = useState("");
@@ -603,7 +842,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   return <div>{message}</div>;
 }`,
       language: "jsx",
-      explanation: "The function dependency causes the effect to run on every render, even when unnecessary."
+      explanation:
+        "The function dependency causes the effect to run on every render, even when unnecessary.",
     },
     correctCode: {
       code: `function ChatRoom() {
@@ -626,7 +866,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   return <div>{message}</div>;
 }`,
       language: "jsx",
-      explanation: "Moving the function inside the effect eliminates the dependency and prevents unnecessary re-runs."
+      explanation:
+        "Moving the function inside the effect eliminates the dependency and prevents unnecessary re-runs.",
     },
     alternativeCode: {
       code: `function ChatRoom() {
@@ -649,7 +890,8 @@ const UserAgeCalculator = ({ userInfo }) => {
   return <div>{message}</div>;
 }`,
       language: "jsx",
-      explanation: "Alternatively, properly memoize the function with useCallback to make the dependency stable."
-    }
-  }
+      explanation:
+        "Alternatively, properly memoize the function with useCallback to make the dependency stable.",
+    },
+  },
 };

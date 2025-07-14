@@ -1,7 +1,7 @@
 # Interactive Anchor Feature Documentation
 
 ## Overview
-The Interactive Anchor feature allows readers to click on specific terms in blog posts to see detailed definitions in the left sidebar. When clicked, the anchor animates into a pill shape and shows contextual information.
+The Interactive Anchor feature allows readers to click on specific terms in blog posts to see detailed definitions in the left sidebar. When clicked, the anchor animates into a pill shape and shows contextual information. The system supports both technical concepts (React hooks) and psychological concepts (happiness research).
 
 ## Components Architecture
 
@@ -14,7 +14,7 @@ The Interactive Anchor feature allows readers to click on specific terms in blog
   - Unique ID generation for each anchor instance
 
 **Props**:
-- `text`: The text to display (e.g., "useEffect")
+- `text`: The text to display (e.g., "useEffect", "mindfulness")
 - `definitionKey`: Key to lookup definition content
 
 **State Management**:
@@ -33,14 +33,38 @@ The Interactive Anchor feature allows readers to click on specific terms in blog
 - **Sidebar Modes**: 
   - `'toc'`: Shows table of contents
   - `'definition'`: Shows anchor definition with back button
+  - `'code'`: Shows code examples with syntax highlighting
 - **State Management**:
   - `sidebarMode`: Controls sidebar content
   - `currentDefinition`: Stores active definition data
+  - `currentCodeExample`: Stores active code example data
+- **Fixed Issues**:
+  - **Overflow handling**: Added `break-words` and proper flex containers
+  - **Duplicate ToC**: Scoped heading extraction to `article.prose` only
+  - **Text wrapping**: Proper container constraints prevent overflow
 
 ### 4. Definitions (`src/app/components/definitions.tsx`)
 - **Purpose**: Contains rich content for each anchor type
 - **Structure**: Key-value pairs with title and JSX content
-- **Current Definitions**: useEffect, useState, useMemo, useCallback, etc.
+- **React Definitions**: useEffect, useState, useMemo, useCallback, keys, immutability
+- **Psychology Definitions**: hedonicAdaptation, affectiveForecasting, socialComparison, mindfulness, gratitudePractice
+
+## Content Categories
+
+### Technical Definitions (React)
+- **useEffect**: Lifecycle hook with syntax, use cases, and best practices
+- **useState**: State management with examples and patterns
+- **useMemo**: Performance optimization with warnings about premature optimization
+- **useCallback**: Function memoization with React.memo integration tips
+- **keys**: React reconciliation with good/bad key examples
+- **immutability**: State mutation prevention with safe update patterns
+
+### Psychology Definitions (Happiness)
+- **hedonicAdaptation**: How humans return to baseline happiness despite events
+- **affectiveForecasting**: Our poor ability to predict future emotions (impact bias, durability bias)
+- **socialComparison**: How we evaluate ourselves relative to others (upward/downward/lateral)
+- **mindfulness**: Present-moment awareness practice with core elements and benefits
+- **gratitudePractice**: Evidence-based gratitude methods with research findings
 
 ## Animation System
 
@@ -48,12 +72,12 @@ The Interactive Anchor feature allows readers to click on specific terms in blog
 ```css
 @keyframes expand-pill {
   0% {
-    transform: scaleX(0);
-    transform-origin: right center; /* Starts from button position */
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
   }
   100% {
-    transform: scaleX(1);
-    transform-origin: right center;
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
 }
 
@@ -142,10 +166,36 @@ The Interactive Anchor feature allows readers to click on specific terms in blog
 3. ✅ **Hydration errors**: Proper inline element nesting
 4. ✅ **Animation direction**: Right-to-left expansion from button position
 5. ✅ **Layout shift**: Minimized padding and added consistent spacing
+6. ✅ **Text overflow**: Added `break-words` to all content areas
+7. ✅ **Duplicate ToC entries**: Scoped heading extraction to article only
+8. ✅ **Scroll containers**: Proper flexbox layout with overflow management
 
 ## Future Enhancements
-- Add keyboard navigation support
-- Implement focus management for accessibility
-- Add more definition types beyond React hooks
-- Consider animation preferences (prefers-reduced-motion)
+- Add keyboard navigation support (arrow keys, Enter/Escape)
+- Implement focus management for accessibility (ARIA attributes)
+- Add more definition types (design patterns, data structures, etc.)
+- Consider animation preferences (prefers-reduced-motion support)
 - Add analytics tracking for anchor interactions
+- Implement search within definitions
+- Add cross-references between related definitions
+
+## Recent Project Updates (Current Session)
+
+### Homepage Layout Changes
+- **Image Replacement**: Replaced static soul.jpg with interactive Lottie animation (cat-reading.json)
+- **Grid Restructure**: Changed from 50/50 to 40/60 column split using `lg:grid-cols-5`
+- **Component Architecture**: Created separate `LottieAnimation.tsx` client component
+- **Server/Client Optimization**: Main page remains server component for better SEO
+
+### Lottie Integration
+- **Package**: Added `lottie-react` dependency
+- **File Location**: `/public/images/cat-reading.json` (3656 lines)
+- **Component**: `/src/app/components/LottieAnimation.tsx`
+- **Styling**: 900px × 600px (1.5x scale), left-aligned positioning
+
+### Typography Updates
+- Changed subtitle color from `text-gray-600` to `text-gray-400`
+- Updated blog post dates to `text-gray-400` for consistency
+- Maintained `text-gray-500` for blog excerpt text
+
+## Known Issues Resolved
