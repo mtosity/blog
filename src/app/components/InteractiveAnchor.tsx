@@ -36,11 +36,13 @@ function InteractiveAnchor({ text, definitionKey }: InteractiveAnchorProps) {
   }, [isClicked, wasActive]);
 
   const handleClick = () => {
+    console.log('InteractiveAnchor clicked:', { text, definitionKey, anchorId, isClicked });
     if (isClicked) return;
 
     setIsAnimating(true);
 
     // Call onInteract immediately to show content, then handle animation separately
+    console.log('Calling onInteract with:', definitionKey, anchorId);
     onInteract(definitionKey, anchorId);
 
     setTimeout(() => {

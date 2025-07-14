@@ -1,6 +1,5 @@
 import BlogLayout from "../../components/BlogLayout";
 import InteractiveAnchor from "../../components/InteractiveAnchor";
-import CodeAnchor from "../../components/CodeAnchor";
 
 function BlogContent() {
   return (

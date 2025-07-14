@@ -7,10 +7,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Next.js 15 blog site using the App Router architecture with TypeScript and Tailwind CSS. The project is a personal blog called "Mint by Minh Tam Nguyen" featuring technical and lifestyle content with an interactive sidebar system.
 
 **Recent Updates:**
-- **Lottie Animation Integration**: Replaced static soul.jpg image with animated cat-reading.json Lottie animation
-- **Client/Server Component Separation**: Created dedicated LottieAnimation client component while keeping main page as server component
-- **Layout Optimization**: Reduced left column width from 50% to 40% (2/5 grid columns) for better content balance
-- **Animation Positioning**: Positioned Lottie animation to the left with 1.5x scale (900px × 600px)
+- **Blog Category System**: Implemented comprehensive category filtering with 4 categories: "Building", "Living", "Money", "Tiếng Việt"
+- **Typography Overhaul**: Changed from newspaper-style fonts to Source Serif 4 for content with specific font sizing (18px, 400 weight, 32px line-height)
+- **Vietnamese Content**: Added Vietnamese blog about US Treasury bonds with interactive financial term definitions
+- **Interactive Anchor System**: Fixed definition lookup system and increased font sizes for better readability
+- **Scroll-based Navigation**: Added automatic table of contents highlighting based on scroll position
+- **Font Size Improvements**: Increased font sizes across blog content, table of contents, and definition content
 
 ## Development Commands
 
@@ -51,13 +53,14 @@ The homepage features a carefully crafted layout:
 - **Prism.js** for syntax highlighting
 
 ### Current Blog Posts
-1. **Decoding Happiness** (`/blog/decoding-happiness/`) - Comprehensive guide on happiness psychology
-2. **React Common Mistakes** (`/blog/react-common-mistakes/`) - Technical React tutorial
+1. **Decoding Happiness** (`/blog/decoding-happiness/`) - Comprehensive guide on happiness psychology (Living category)
+2. **React Common Mistakes** (`/blog/react-common-mistakes/`) - Technical React tutorial (Building category)
+3. **Hoa Kỳ Vay Tiền Như Thế Nào?** (`/blog/hoa-ky-vay-tien/`) - Vietnamese blog about US Treasury bonds (Tiếng Việt category)
 
 ### Styling Approach
 - Uses Tailwind CSS v4 with `@import "tailwindcss"`
 - Custom CSS variables for theming (light/dark mode support)
-- Geist fonts (sans and mono) loaded via next/font/google
+- **Typography**: Playfair Display for headings, Source Serif 4 for content (18px, 400 weight, 32px line-height)
 - Responsive design with max-width containers
 - **Overflow management**: Careful use of `break-words`, `overflow-hidden`, and flexbox
 
@@ -75,6 +78,7 @@ The BlogLayout provides a sophisticated two-column layout:
 #### 1. Table of Contents
 - Auto-generated from article headings (h2-h6)
 - **Scoped extraction**: Only extracts headings from `article.prose` to avoid duplicates
+- **Scroll-based highlighting**: Automatically highlights current section based on scroll position
 - Smooth scroll navigation to sections
 - Responsive design with proper overflow handling
 
@@ -96,17 +100,29 @@ The Decoding Happiness blog includes psychology-focused interactive anchors:
 - **Mindfulness**: Present-moment awareness practices
 - **Gratitude Practice**: Research-based gratitude methods
 
+### Vietnamese Financial Blog Features
+The Vietnamese Treasury bonds blog includes financial term interactive anchors:
+- **Thâm hụt ngân sách**: Budget deficit explanations
+- **Trái phiếu kho bạc**: Treasury bonds types and characteristics
+- **Lạm phát**: Inflation causes and historical examples
+- **Hiệp định Bretton Woods**: 1944 international monetary agreement
+- **Nixon Shock**: 1971 end of gold standard
+- **Tiền pháp định**: Fiat currency concept
+- **Petrodollar**: Oil-dollar relationship system
+- **Thanh khoản**: Financial liquidity levels
+
 ### Components Architecture
 
 #### Core Components
-- `BlogLayout.tsx` - Main layout with sidebar state management
+- `BlogLayout.tsx` - Main layout with sidebar state management and scroll-based navigation highlighting
 - `BlogContext.tsx` - React Context for cross-component state
 - `InteractiveAnchor.tsx` - Clickable terms with animations
 - `CodeAnchor.tsx` - Links to code examples
 - `CodeView.tsx` - Code example display with syntax highlighting
 - `CodeBlock.tsx` - Syntax highlighted code blocks
-- `definitions.tsx` - Comprehensive definitions database
+- `definitions.tsx` - Comprehensive definitions database with Vietnamese financial terms
 - `LottieAnimation.tsx` - Client-side Lottie animation component
+- `CategoryFilter.tsx` - Tab-style category filtering for homepage
 
 #### Key Implementation Details
 - **Type safety**: Proper TypeScript interfaces for all components
@@ -115,16 +131,34 @@ The Decoding Happiness blog includes psychology-focused interactive anchors:
 - **Responsive design**: Mobile-first approach with proper breakpoints
 - **Text overflow**: `break-words` and proper container constraints
 
+## Blog Category System
+
+### Category Structure
+- **4 Categories**: "Building", "Living", "Money", "Tiếng Việt"
+- **Default Selection**: "Building" category loads by default
+- **Tab Interface**: Clean tab design with underline styling and hover effects
+- **Color Coding**: Each category has distinct color scheme (blue, green, purple, yellow)
+
+### Implementation Files
+- `src/app/data/blogPosts.ts` - Blog data structure and category types
+- `src/app/components/CategoryFilter.tsx` - Tab-style filter component
+- `src/app/page.tsx` - Homepage with filtering state management
+
+### Blog Content Distribution
+- **Building**: Technical/React content
+- **Living**: Psychology/lifestyle content  
+- **Money**: Financial content
+- **Tiếng Việt**: Vietnamese language content
+
 ## Common Issues & Solutions
 
-### Layout Problems Fixed This Session:
-1. **Text overflow**: Added `break-words` to prevent text from overflowing containers
-2. **Duplicate Table of Contents**: Fixed heading extraction to scope to article content only
-3. **Scroll management**: Implemented proper flexbox with `overflow-hidden` and `overflow-y-auto`
-4. **Image replacement**: Replaced static soul.jpg with animated cat-reading.json Lottie animation
-5. **Column proportions**: Changed from 50/50 to 40/60 split (lg:grid-cols-5 with col-span-2/3)
-6. **Client/Server optimization**: Separated Lottie animation into client component while keeping page server-side
-7. **Animation positioning**: Left-aligned animation with 1.5x scaling for better visual impact
+### Recent Session Fixes (July 14, 2025):
+1. **Interactive Anchor Bug**: Fixed Vietnamese definitions showing undefined - definitions were placed outside the definitions object
+2. **Typography System**: Implemented Source Serif 4 for content with specific sizing (18px, 400 weight, 32px line-height)
+3. **Font Size Standardization**: Increased all content font sizes for better readability
+4. **Scroll-based Navigation**: Added automatic table of contents highlighting based on scroll position
+5. **Category Filtering**: Implemented complete tab-style filtering system with proper state management
+6. **Vietnamese Content**: Added comprehensive financial blog with interactive definitions
 
 ### Type Safety
 - All components use proper TypeScript interfaces

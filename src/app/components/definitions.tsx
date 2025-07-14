@@ -30,19 +30,19 @@ export const definitions: Record<string, Definition> = {
     title: "useEffect Hook",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>useEffect</strong> is a React Hook that lets you perform side
           effects in functional components.
         </p>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
-          <code className="text-xs">useEffect(setup, dependencies?)</code>
+          <h4 className="font-semibold text-base mb-2">Syntax:</h4>
+          <code className="text-sm">useEffect(setup, dependencies?)</code>
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Parameters:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Parameters:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>
               <strong>setup</strong>: Function with your Effect&apos;s logic
             </li>
@@ -54,8 +54,8 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Common Use Cases:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Common Use Cases:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>• Fetching data from APIs</li>
             <li>• Setting up subscriptions</li>
             <li>• Manually changing the DOM</li>
@@ -64,10 +64,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-yellow-800 dark:text-yellow-200">
+          <h4 className="font-semibold text-base mb-1 text-yellow-800 dark:text-yellow-200">
             ⚠️ Important:
           </h4>
-          <p className="text-xs text-yellow-700 dark:text-yellow-300">
+          <p className="text-base text-yellow-700 dark:text-yellow-300">
             Always include all dependencies that are used inside the effect to
             avoid stale closures.
           </p>
@@ -80,21 +80,21 @@ export const definitions: Record<string, Definition> = {
     title: "useState Hook",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>useState</strong> is a React Hook that lets you add state to
           functional components.
         </p>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
-          <code className="text-xs">
+          <h4 className="font-semibold text-base mb-2">Syntax:</h4>
+          <code className="text-sm">
             const [state, setState] = useState(initialState)
           </code>
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Returns:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Returns:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>
               <strong>state</strong>: Current state value
             </li>
@@ -105,10 +105,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-blue-800 dark:text-blue-200">
+          <h4 className="font-semibold text-base mb-1 text-blue-800 dark:text-blue-200">
             💡 Best Practice:
           </h4>
-          <p className="text-xs text-blue-700 dark:text-blue-300">
+          <p className="text-base text-blue-700 dark:text-blue-300">
             Use functional updates when the new state depends on the previous
             state.
           </p>
@@ -121,21 +121,21 @@ export const definitions: Record<string, Definition> = {
     title: "useMemo Hook",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>useMemo</strong> is a React Hook that lets you cache expensive
           calculations between re-renders.
         </p>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
-          <code className="text-xs">
+          <h4 className="font-semibold text-base mb-2">Syntax:</h4>
+          <code className="text-sm">
             const memoizedValue = useMemo(() =&gt; computation, [dependencies])
           </code>
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">When to Use:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">When to Use:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>• Expensive calculations</li>
             <li>• Creating objects that cause re-renders</li>
             <li>• Optimizing child component props</li>
@@ -143,10 +143,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-orange-800 dark:text-orange-200">
+          <h4 className="font-semibold text-base mb-1 text-orange-800 dark:text-orange-200">
             ⚡ Performance:
           </h4>
-          <p className="text-xs text-orange-700 dark:text-orange-300">
+          <p className="text-base text-orange-700 dark:text-orange-300">
             Only use when you have a proven performance problem. Profile first!
           </p>
         </div>
@@ -158,21 +158,21 @@ export const definitions: Record<string, Definition> = {
     title: "useCallback Hook",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>useCallback</strong> is a React Hook that lets you cache a
           function definition between re-renders.
         </p>
 
         <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2">Syntax:</h4>
-          <code className="text-xs">
+          <h4 className="font-semibold text-base mb-2">Syntax:</h4>
+          <code className="text-sm">
             const memoizedCallback = useCallback(fn, [dependencies])
           </code>
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Common Use Cases:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Common Use Cases:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>• Preventing unnecessary re-renders of child components</li>
             <li>• Optimizing event handlers passed as props</li>
             <li>• Dependency of other hooks</li>
@@ -180,10 +180,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+          <h4 className="font-semibold text-base mb-1 text-green-800 dark:text-green-200">
             ✅ Tip:
           </h4>
-          <p className="text-xs text-green-700 dark:text-green-300">
+          <p className="text-base text-green-700 dark:text-green-300">
             Use with React.memo() for maximum optimization benefit.
           </p>
         </div>
@@ -195,14 +195,14 @@ export const definitions: Record<string, Definition> = {
     title: "React Keys",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Keys</strong> help React identify which items have changed,
           are added, or are removed in lists.
         </p>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Requirements:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Requirements:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>• Must be unique among siblings</li>
             <li>• Should be stable across re-renders</li>
             <li>• Should not be array indices (in most cases)</li>
@@ -210,8 +210,8 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Good Key Examples:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Good Key Examples:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>
               • Database IDs: <code>user.id</code>
             </li>
@@ -221,10 +221,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-red-800 dark:text-red-200">
+          <h4 className="font-semibold text-base mb-1 text-red-800 dark:text-red-200">
             ❌ Avoid:
           </h4>
-          <p className="text-xs text-red-700 dark:text-red-300">
+          <p className="text-base text-red-700 dark:text-red-300">
             Using array indices as keys when list items can be reordered, added,
             or removed.
           </p>
@@ -237,14 +237,14 @@ export const definitions: Record<string, Definition> = {
     title: "State Immutability",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Immutability</strong> means not changing existing
           objects/arrays, but creating new ones instead.
         </p>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Why It Matters:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Why It Matters:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>• React uses Object.is() to detect changes</li>
             <li>• Enables efficient re-rendering</li>
             <li>• Prevents bugs from shared references</li>
@@ -253,8 +253,8 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div>
-          <h4 className="font-semibold text-sm mb-2">Safe Update Patterns:</h4>
-          <ul className="text-xs space-y-1 text-gray-600 dark:text-gray-300">
+          <h4 className="font-semibold text-base mb-2">Safe Update Patterns:</h4>
+          <ul className="text-base space-y-1 text-gray-600 dark:text-gray-300">
             <li>
               • Arrays: <code>[...items, newItem]</code>
             </li>
@@ -271,10 +271,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-purple-800 dark:text-purple-200">
+          <h4 className="font-semibold text-base mb-1 text-purple-800 dark:text-purple-200">
             🔧 Tools:
           </h4>
-          <p className="text-xs text-purple-700 dark:text-purple-300">
+          <p className="text-base text-purple-700 dark:text-purple-300">
             Consider using Immer for complex state updates.
           </p>
         </div>
@@ -286,17 +286,17 @@ export const definitions: Record<string, Definition> = {
     title: "Hedonic Adaptation",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Hedonic Adaptation</strong> is the tendency for humans to
           quickly return to a baseline level of happiness despite positive or
           negative events.
         </p>
 
         <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2 text-blue-800 dark:text-blue-200">
+          <h4 className="font-semibold text-base mb-2 text-blue-800 dark:text-blue-200">
             How it works:
           </h4>
-          <ul className="text-xs space-y-1 text-blue-700 dark:text-blue-300">
+          <ul className="text-base space-y-1 text-blue-700 dark:text-blue-300">
             <li>• Initial boost in happiness from positive changes</li>
             <li>• Gradual return to baseline happiness level</li>
             <li>• New circumstances become "normal"</li>
@@ -304,10 +304,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-yellow-800 dark:text-yellow-200">
+          <h4 className="font-semibold text-base mb-1 text-yellow-800 dark:text-yellow-200">
             Examples:
           </h4>
-          <p className="text-xs text-yellow-700 dark:text-yellow-300">
+          <p className="text-base text-yellow-700 dark:text-yellow-300">
             Winning the lottery, getting a promotion, or buying a new car
             initially brings joy, but happiness levels typically return to
             baseline within months.
@@ -321,16 +321,16 @@ export const definitions: Record<string, Definition> = {
     title: "Affective Forecasting",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Affective Forecasting</strong> is our ability to predict how
           future events will make us feel. Humans are notoriously bad at this.
         </p>
 
         <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2 text-red-800 dark:text-red-200">
+          <h4 className="font-semibold text-base mb-2 text-red-800 dark:text-red-200">
             Common Mistakes:
           </h4>
-          <ul className="text-xs space-y-1 text-red-700 dark:text-red-300">
+          <ul className="text-base space-y-1 text-red-700 dark:text-red-300">
             <li>
               • <strong>Impact bias:</strong> Overestimating intensity of future
               emotions
@@ -347,10 +347,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+          <h4 className="font-semibold text-base mb-1 text-green-800 dark:text-green-200">
             Why it matters:
           </h4>
-          <p className="text-xs text-green-700 dark:text-green-300">
+          <p className="text-base text-green-700 dark:text-green-300">
             Understanding this bias helps us make better decisions and have more
             realistic expectations about future happiness.
           </p>
@@ -363,16 +363,16 @@ export const definitions: Record<string, Definition> = {
     title: "Social Comparison Theory",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Social Comparison Theory</strong> explains how we evaluate
           ourselves relative to others to assess our own worth and abilities.
         </p>
 
         <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2 text-purple-800 dark:text-purple-200">
+          <h4 className="font-semibold text-base mb-2 text-purple-800 dark:text-purple-200">
             Types of Comparison:
           </h4>
-          <ul className="text-xs space-y-1 text-purple-700 dark:text-purple-300">
+          <ul className="text-base space-y-1 text-purple-700 dark:text-purple-300">
             <li>
               • <strong>Upward:</strong> Comparing to those "better off"
             </li>
@@ -386,10 +386,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-orange-800 dark:text-orange-200">
+          <h4 className="font-semibold text-base mb-1 text-orange-800 dark:text-orange-200">
             Impact on happiness:
           </h4>
-          <p className="text-xs text-orange-700 dark:text-orange-300">
+          <p className="text-base text-orange-700 dark:text-orange-300">
             Frequent upward comparisons can decrease life satisfaction, while
             focusing on personal progress tends to increase well-being.
           </p>
@@ -402,16 +402,16 @@ export const definitions: Record<string, Definition> = {
     title: "Mindfulness",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Mindfulness</strong> is the practice of purposeful,
           non-judgmental awareness of the present moment.
         </p>
 
         <div className="bg-teal-50 dark:bg-teal-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2 text-teal-800 dark:text-teal-200">
+          <h4 className="font-semibold text-base mb-2 text-teal-800 dark:text-teal-200">
             Core Elements:
           </h4>
-          <ul className="text-xs space-y-1 text-teal-700 dark:text-teal-300">
+          <ul className="text-base space-y-1 text-teal-700 dark:text-teal-300">
             <li>• Present-moment awareness</li>
             <li>• Non-judgmental observation</li>
             <li>• Acceptance of current experience</li>
@@ -420,10 +420,10 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-green-800 dark:text-green-200">
+          <h4 className="font-semibold text-base mb-1 text-green-800 dark:text-green-200">
             Benefits for happiness:
           </h4>
-          <p className="text-xs text-green-700 dark:text-green-300">
+          <p className="text-base text-green-700 dark:text-green-300">
             Regular mindfulness practice can increase life satisfaction, reduce
             stress, and help you savor positive experiences more fully.
           </p>
@@ -436,16 +436,16 @@ export const definitions: Record<string, Definition> = {
     title: "Gratitude Practice",
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-base text-gray-600 dark:text-gray-300">
           <strong>Gratitude Practice</strong> involves regularly acknowledging
           and appreciating positive aspects of life, both big and small.
         </p>
 
         <div className="bg-pink-50 dark:bg-pink-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-2 text-pink-800 dark:text-pink-200">
+          <h4 className="font-semibold text-base mb-2 text-pink-800 dark:text-pink-200">
             Effective Methods:
           </h4>
-          <ul className="text-xs space-y-1 text-pink-700 dark:text-pink-300">
+          <ul className="text-base space-y-1 text-pink-700 dark:text-pink-300">
             <li>• Three good things exercise (daily)</li>
             <li>• Gratitude journaling</li>
             <li>• Gratitude letters to others</li>
@@ -454,13 +454,262 @@ export const definitions: Record<string, Definition> = {
         </div>
 
         <div className="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-lg">
-          <h4 className="font-semibold text-sm mb-1 text-indigo-800 dark:text-indigo-200">
+          <h4 className="font-semibold text-base mb-1 text-indigo-800 dark:text-indigo-200">
             Research findings:
           </h4>
-          <p className="text-xs text-indigo-700 dark:text-indigo-300">
+          <p className="text-base text-indigo-700 dark:text-indigo-300">
             Studies show gratitude practice can increase happiness by 25%,
             improve sleep quality, strengthen relationships, and boost immune
             function.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  // Vietnamese Financial Terms
+  thamHutNganSach: {
+    title: "Thâm Hụt Ngân Sách (Budget Deficit)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Thâm hụt ngân sách</strong> xảy ra khi chính phủ chi tiêu nhiều hơn số tiền thu được từ thuế và các nguồn thu khác.
+        </p>
+
+        <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-red-800 dark:text-red-200">
+            Tác động:
+          </h4>
+          <ul className="text-base space-y-1 text-red-700 dark:text-red-300">
+            <li>• Chính phủ phải đi vay để bù đắp</li>
+            <li>• Tăng nợ công quốc gia</li>
+            <li>• Có thể dẫn đến lạm phát nếu in thêm tiền</li>
+          </ul>
+        </div>
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-blue-800 dark:text-blue-200">
+            Cách xử lý:
+          </h4>
+          <p className="text-base text-blue-700 dark:text-blue-300">
+            Chính phủ thường phát hành trái phiếu để vay tiền thay vì in thêm tiền.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  traiPhieuKhoBac: {
+    title: "Trái Phiếu Kho Bạc (Treasury Bonds)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Trái phiếu kho bạc</strong> là chứng khoán nợ do chính phủ phát hành để huy động vốn từ các nhà đầu tư.
+        </p>
+
+        <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-green-800 dark:text-green-200">
+            Các loại:
+          </h4>
+          <ul className="text-base space-y-1 text-green-700 dark:text-green-300">
+            <li>• <strong>Treasury Bills:</strong> Ngắn hạn (&lt;1 năm)</li>
+            <li>• <strong>Treasury Notes:</strong> Trung hạn (2-10 năm)</li>
+            <li>• <strong>Treasury Bonds:</strong> Dài hạn (20-30 năm)</li>
+          </ul>
+        </div>
+
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-yellow-800 dark:text-yellow-200">
+            💡 Đặc điểm:
+          </h4>
+          <p className="text-base text-yellow-700 dark:text-yellow-300">
+            Được coi là đầu tư an toàn nhất vì có sự bảo đảm của chính phủ Mỹ.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  lamPhat: {
+    title: "Lạm Phát (Inflation)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Lạm phát</strong> là hiện tượng giá cả hàng hóa và dịch vụ tăng liên tục trong thời gian dài.
+        </p>
+
+        <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-orange-800 dark:text-orange-200">
+            Nguyên nhân chính:
+          </h4>
+          <ul className="text-base space-y-1 text-orange-700 dark:text-orange-300">
+            <li>• In quá nhiều tiền</li>
+            <li>• Cầu vượt quá cung</li>
+            <li>• Chi phí sản xuất tăng</li>
+          </ul>
+        </div>
+
+        <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-red-800 dark:text-red-200">
+            ⚠️ Ví dụ lịch sử:
+          </h4>
+          <p className="text-base text-red-700 dark:text-red-300">
+            Đức sau Thế chiến I và Zimbabwe trong những năm 2000 đã trải qua siêu lạm phát.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  brettonWoods: {
+    title: "Hiệp Định Bretton Woods (1944)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Hiệp định Bretton Woods</strong> là thỏa thuận quốc tế thiết lập hệ thống tiền tệ toàn cầu sau Thế chiến II.
+        </p>
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-blue-800 dark:text-blue-200">
+            Nội dung chính:
+          </h4>
+          <ul className="text-base space-y-1 text-blue-700 dark:text-blue-300">
+            <li>• Đô la Mỹ được neo vào vàng</li>
+            <li>• Các đồng tiền khác neo vào đô la</li>
+            <li>• Tỷ giá hối đoái cố định</li>
+          </ul>
+        </div>
+
+        <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1">
+            📅 Kết thúc: 1971
+          </h4>
+          <p className="text-base text-gray-600 dark:text-gray-300">
+            Nixon Shock chấm dứt việc quy đổi đô la sang vàng.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  nixonShock: {
+    title: "Nixon Shock (1971)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Nixon Shock</strong> là quyết định của Tổng thống Nixon ngừng quy đổi đô la Mỹ sang vàng vào năm 1971.
+        </p>
+
+        <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-purple-800 dark:text-purple-200">
+            Hậu quả:
+          </h4>
+          <ul className="text-base space-y-1 text-purple-700 dark:text-purple-300">
+            <li>• Đô la trở thành tiền pháp định</li>
+            <li>• Tỷ giá hối đoái thả nổi</li>
+            <li>• Kết thúc hệ thống Bretton Woods</li>
+          </ul>
+        </div>
+
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-yellow-800 dark:text-yellow-200">
+            🌍 Tác động toàn cầu:
+          </h4>
+          <p className="text-base text-yellow-700 dark:text-yellow-300">
+            Bắt đầu kỷ nguyên đô la dựa vào niềm tin chứ không phải vàng.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  tienPhapDinh: {
+    title: "Tiền Pháp Định (Fiat Currency)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Tiền pháp định</strong> là đồng tiền không được bảo đảm bằng vàng hay kim loại quý, mà dựa vào niềm tin của người dân.
+        </p>
+
+        <div className="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-indigo-800 dark:text-indigo-200">
+            Đặc điểm:
+          </h4>
+          <ul className="text-base space-y-1 text-indigo-700 dark:text-indigo-300">
+            <li>• Không neo vào vàng</li>
+            <li>• Giá trị dựa vào niềm tin</li>
+            <li>• Chính phủ có thể in thêm tiền</li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-green-800 dark:text-green-200">
+            ✅ Ưu điểm:
+          </h4>
+          <p className="text-base text-green-700 dark:text-green-300">
+            Linh hoạt trong chính sách tiền tệ để ứng phó với khủng hoảng.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  petrodollar: {
+    title: "Petrodollar",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Petrodollar</strong> là hệ thống sử dụng đô la Mỹ làm đồng tiền chính trong giao dịch dầu mỏ toàn cầu.
+        </p>
+
+        <div className="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-amber-800 dark:text-amber-200">
+            Cách hoạt động:
+          </h4>
+          <ul className="text-base space-y-1 text-amber-700 dark:text-amber-300">
+            <li>• Dầu được bán bằng đô la</li>
+            <li>• Các nước phải có đô la để mua dầu</li>
+            <li>• Tăng cầu đô la toàn cầu</li>
+          </ul>
+        </div>
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-blue-800 dark:text-blue-200">
+            💪 Củng cố sức mạnh:
+          </h4>
+          <p className="text-base text-blue-700 dark:text-blue-300">
+            Giúp duy trì vị thế đô la như đồng tiền dự trữ toàn cầu.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+
+  thanhKhoan: {
+    title: "Thanh Khoản (Liquidity)",
+    content: (
+      <div className="space-y-4">
+        <p className="text-base text-gray-600 dark:text-gray-300">
+          <strong>Thanh khoản</strong> là khả năng chuyển đổi một tài sản thành tiền mặt một cách nhanh chóng và không mất giá.
+        </p>
+
+        <div className="bg-teal-50 dark:bg-teal-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-2 text-teal-800 dark:text-teal-200">
+            Mức độ thanh khoản:
+          </h4>
+          <ul className="text-base space-y-1 text-teal-700 dark:text-teal-300">
+            <li>• <strong>Cao:</strong> Tiền mặt, trái phiếu chính phủ</li>
+            <li>• <strong>Trung bình:</strong> Cổ phiếu lớn</li>
+            <li>• <strong>Thấp:</strong> Bất động sản, tranh nghệ thuật</li>
+          </ul>
+        </div>
+
+        <div className="bg-emerald-50 dark:bg-emerald-900/20 p-3 rounded-lg">
+          <h4 className="font-semibold text-base mb-1 text-emerald-800 dark:text-emerald-200">
+            🏦 Thị trường Mỹ:
+          </h4>
+          <p className="text-base text-emerald-700 dark:text-emerald-300">
+            Có thanh khoản cao nhất thế giới, thu hút nhà đầu tư toàn cầu.
           </p>
         </div>
       </div>

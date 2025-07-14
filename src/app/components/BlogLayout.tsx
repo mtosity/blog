@@ -15,6 +15,7 @@ import CodeView from "./CodeView";
 interface BlogLayoutProps {
   title: string;
   date: string;
+  category?: string;
   children: React.ReactNode;
 }
 
@@ -34,6 +35,7 @@ function Sidebar({
   onScrollToHeading,
   isTransitioning,
   isClosing,
+  activeHeadingId,
 }: {
   headings: Heading[];
   sidebarMode: SidebarMode;
@@ -42,6 +44,7 @@ function Sidebar({
   onScrollToHeading: (id: string) => void;
   isTransitioning: boolean;
   isClosing: boolean;
+  activeHeadingId: string;
 }) {
   const { onClose } = useBlogInteraction();
 
@@ -89,7 +92,7 @@ function Sidebar({
                   Back
                 </button>
               </div>
-              <div className="text-gray-600 dark:text-gray-300 overflow-y-auto break-words">
+              <div className="text-gray-600 dark:text-gray-300 overflow-y-auto break-words text-base">
                 {currentDefinition?.content}
               </div>
             </div>
@@ -110,19 +113,26 @@ function Sidebar({
                 Table of Contents
               </h3>
               <nav className="space-y-2 overflow-y-auto max-h-[calc(100vh-16rem)]">
-                {headings.map((heading) => (
-                  <button
-                    key={heading.id}
-                    onClick={() => onScrollToHeading(heading.id)}
-                    className={`block w-full text-left text-sm hover:text-blue-500 dark:hover:text-blue-400 transition-colors break-words ${
-                      heading.level === 2
-                        ? "font-medium"
-                        : "text-gray-600 dark:text-gray-400 ml-4"
-                    }`}
-                  >
-                    {heading.text}
-                  </button>
-                ))}
+                {headings.map((heading) => {
+                  const isActive = heading.id === activeHeadingId;
+                  return (
+                    <button
+                      key={heading.id}
+                      onClick={() => onScrollToHeading(heading.id)}
+                      className={`block w-full text-left text-base hover:text-blue-500 dark:hover:text-blue-400 transition-colors break-words ${
+                        heading.level === 2
+                          ? "font-medium"
+                          : "text-gray-600 dark:text-gray-400 ml-4"
+                      } ${
+                        isActive
+                          ? "text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded"
+                          : ""
+                      }`}
+                    >
+                      {heading.text}
+                    </button>
+                  );
+                })}
               </nav>
             </div>
           )}
@@ -132,7 +142,8 @@ function Sidebar({
   );
 }
 
-export default function BlogLayout({ title, date, children }: BlogLayoutProps) {
+export default function BlogLayout({ title, date, category, children }: BlogLayoutProps) {
+  void category; // Suppress unused parameter warning
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [sidebarMode, setSidebarMode] = useState<SidebarMode>("toc");
   const [currentDefinition, setCurrentDefinition] = useState<Definition | null>(
@@ -142,6 +153,7 @@ export default function BlogLayout({ title, date, children }: BlogLayoutProps) {
     useState<CodeExample | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [activeHeadingId, setActiveHeadingId] = useState<string>("");
 
   useEffect(() => {
     const extractHeadings = () => {
@@ -170,6 +182,48 @@ export default function BlogLayout({ title, date, children }: BlogLayoutProps) {
     const timer = setTimeout(extractHeadings, 100);
     return () => clearTimeout(timer);
   }, [children]);
+
+  // Scroll listener to highlight active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const headingElements = headings.map(h => document.getElementById(h.id)).filter(Boolean);
+      
+      if (headingElements.length === 0) return;
+
+      // Find the heading that is currently in view
+      let activeId = "";
+      for (let i = headingElements.length - 1; i >= 0; i--) {
+        const element = headingElements[i];
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Check if heading is in the upper portion of viewport
+          if (rect.top <= 100) {
+            activeId = element.id;
+            break;
+          }
+        }
+      }
+
+      // If no heading is above the viewport, highlight the first one
+      if (!activeId && headingElements[0]) {
+        const firstRect = headingElements[0].getBoundingClientRect();
+        if (firstRect.top > 100) {
+          activeId = headingElements[0].id;
+        }
+      }
+
+      setActiveHeadingId(activeId);
+    };
+
+    // Listen for scroll events
+    window.addEventListener("scroll", handleScroll);
+    // Initial call to set active heading
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [headings]);
 
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
@@ -249,11 +303,12 @@ export default function BlogLayout({ title, date, children }: BlogLayoutProps) {
             onScrollToHeading={scrollToHeading}
             isTransitioning={isTransitioning}
             isClosing={isClosing}
+            activeHeadingId={activeHeadingId}
           />
 
           {/* Right Content Area */}
           <div className="lg:col-span-1">
-            <article className="prose prose-xl max-w-none dark:prose-invert tracking-wide">
+            <article className="prose prose-xl max-w-none dark:prose-invert tracking-wide prose-lg">
               <header className="mb-8">
                 <h1 className="text-4xl font-bold mb-4">{title}</h1>
                 <p className="text-gray-500 dark:text-gray-400">{date}</p>
