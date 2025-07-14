@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "prismjs/themes/prism-tomorrow.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes expand-pill {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+}
+
+@keyframes collapse-pill {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+}
+
+.animate-expand-pill {
+  animation: expand-pill 300ms ease-in-out forwards;
+}
+
+.animate-collapse-pill {
+  animation: collapse-pill 300ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: fade-in 500ms ease-out forwards;
+}
+
+@keyframes fade-blur-out {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+.animate-fade-blur-out {
+  animation: fade-blur-out 250ms ease-in forwards;
+}
+
+@keyframes fade-in-smooth {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-smooth {
+  animation: fade-in-smooth 400ms ease-out forwards;
+}
+
+@keyframes definition-exit {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(-20px);
+  }
+}
+
+.animate-definition-exit {
+  animation: definition-exit 300ms ease-in forwards;
+}
+
+/* Prism.js syntax highlighting overrides */
+pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  border-radius: 0;
+}
+
+code[class*="language-"] {
+  background: transparent !important;
+  color: inherit;
+  text-shadow: none;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Dark mode specific tokens */
+@media (prefers-color-scheme: dark) {
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #6b7280;
+  }
+
+  .token.punctuation {
+    color: #9ca3af;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #f87171;
+  }
+
+  .token.boolean,
+  .token.number {
+    color: #fbbf24;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #34d399;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #60a5fa;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #a78bfa;
+  }
+
+  .token.keyword {
+    color: #fb7185;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #fbbf24;
+  }
+}
+
+/* Light mode specific tokens */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6b7280;
+}
+
+.token.punctuation {
+  color: #374151;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #dc2626;
+}
+
+.token.boolean,
+.token.number {
+  color: #d97706;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #059669;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #2563eb;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #7c3aed;
+}
+
+.token.keyword {
+  color: #e11d48;
+}
+
+.token.regex,
+.token.important {
+  color: #d97706;
+}
