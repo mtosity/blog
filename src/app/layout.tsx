@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${sourceSerif4.variable} antialiased`}
       >
-        <Script src="/sw-remove-gasby.js" strategy="afterInteractive" />
+        <Script src="/sw.js" strategy="worker" />
         {children}
       </body>
     </html>
