@@ -4,10 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LottieAnimation from "./components/LottieAnimation";
 import CategoryFilter from "./components/CategoryFilter";
-import {
-  blogPosts,
-  CategoryType,
-} from "./data/blogPosts";
+import { blogPosts, CategoryType } from "./data/blogPosts";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] =

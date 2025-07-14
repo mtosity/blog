@@ -32,6 +32,19 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${sourceSerif4.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (navigator && navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+                navigator.serviceWorker.getRegistrations().then((registrations) => {
+                  for(let registration of registrations) {
+                    registration.unregister()
+                  }
+                })
+              }
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
