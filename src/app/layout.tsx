@@ -20,7 +20,12 @@ export const metadata: Metadata = {
   title: "MTosity's Blog",
   description: "Bring a fresh mint to the world",
   icons: {
-    icon: "/images/mt.png",
+    icon: [
+      { url: "/images/mt.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/mt.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/images/mt.png",
+    shortcut: "/images/mt.png",
   },
 };
 
